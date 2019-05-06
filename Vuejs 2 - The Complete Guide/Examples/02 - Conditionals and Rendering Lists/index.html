@@ -1,0 +1,64 @@
+<html>
+
+<head>
+	<title>Vue.js Conditionals and Rendering Lists</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+
+	<div id="app">
+
+		<!-- Usar v-if e v-else em Vue.js (remove ou adiciona) -->
+		<p v-if="show">You can see me! <span>Hello</span></p>
+		<p v-else>Now you see me!</p>
+		<!-- Usar v-if e v-else para multiplos elementos -->
+		<template v-if="show">
+			<h1>Heading</h1>
+			<p>Inside a template</p>
+		</template>
+		<!-- Usar v-show (mostra ou esconde) -->
+		<p v-show="show">Do you can also see me?</p>
+		<button @click="show = !show">Switch</button>
+
+
+		<!-- Mostrar listas com Vue.js -->
+		<ul>
+			<li v-for="(ingredient, i) in ingredients" :key="ingredient">{{ ingredient }} ({{ i }})</li>
+		</ul>
+		<!-- Adicionar algo à lista (Array) -->
+		<button @click="ingredients.push('spices')">Add Spices</button>
+
+		<hr>
+		<!-- Mostrar listas para multiplos elementos -->
+		<template v-for="(ingredient, index) in ingredients">
+			<h3>{{ ingredient }}</h3>
+			<p>{{ index }}</p>
+		</template>
+
+		<hr>
+		<!-- Mostrar listas de objetos com Vue.js -->
+		<ul>
+			<li v-for="person in persons">
+				<div v-for="(value, key, index) in person">{{ key }}: {{ value }} ({{ index }})</div>
+			</li>
+		</ul>
+
+		<hr>
+		<!-- Mostrar listas de números com Vue.js -->
+		<span v-for="n in 10">{{ n }}</span>
+		<hr>
+
+
+
+
+	</div>
+	<!-- production version, optimized for size and speed -->
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+	<script src="main.js"></script>
+</body>
+
+</html>

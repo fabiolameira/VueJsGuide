@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <title>Exercise 2 Vue.js</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <!-- 1) Show an alert when the Button gets clicked-->
+            <div>
+                <button v-on:click="buttonClick">Show Alert</button>
+            </div>
+
+            <!-- 2) Listen to the "KeyDown" event and store the value in data property
+    (hint: event.target.value gives you the value)-->
+            <div>
+                <input type="text" v-on:keydown="value = $event.target.value">
+                <p>{{ value }}</p>
+
+                <!-- 3) Adjust the expample from 2 to only fire if the "key down is the ENTER key " -->
+                <div>
+                    <input type="text" v-on:keydown.enter="value = $event.target.value">
+                    <p>{{ value }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- production version, optimized for size and speed -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script src="exercises.js"></script>
+</body>
+
+</html>
