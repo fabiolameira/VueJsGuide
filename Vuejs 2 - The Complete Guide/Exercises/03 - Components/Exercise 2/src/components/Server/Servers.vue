@@ -13,9 +13,9 @@ export default {
     return {
       servers: [
         { id: 1, status: "Normal" },
-        { id: 2, status: "Critical" },
-        { id: 3, status: "Normal" },
-        { id: 4, status: "Normal" }
+        { id: 2, status: "Abnormal" },
+        { id: 3, status: "Unknow" },
+        { id: 4, status: "Critical" }
       ]
     };
   },
